@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Route,
   BrowserRouter as Router,
@@ -12,23 +12,57 @@ import Login from './pages/Login';
 import { auth } from './services/firebase';
 
 const App = () => {
+  const [authenticated, setAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    auth().onAuthStateChanged((user) => {
+      if(user) {
+        setAuthenticated(true);
+        setLoading(false);
+      } else { 
+        setAuthenticated(false);
+        setLoading(false);
+      }
+    }, auth())
+  });
+
+  function PrivateRoute({ component: Component, authenticated, ...rest }) {
+    return (
+      <Route
+        {...rest}
+        render={(props) => authenticated === true
+          ? <Component {...props} />
+          : <Redirect to={{ pathname: '/login', state: { from: props.location } }} />}
+      />
+    )
+  }
+
+  function PublicRoute({ component: Component, authenticated, ...rest }) {
+    return (
+      <Route
+        {...rest}
+        render={(props) => authenticated === false
+          ? <Component {...props} />
+          : <Redirect to='/chat' />}
+      />
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {
+        loading === talse ? <h2> Loading... </h2> :
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <PrivateRoute path="/chat" authenticated={authenticated} component={Chat}></PrivateRoute>
+            <PublicRoute path="/signup" authenticated={authenticated} component={Signup}></PublicRoute>
+            <PublicRoute path="/login" authenticated={authenticated} component={Login}></PublicRoute>
+          </Switch>
+        </Router>
+      }
+    </>
   );
 }
 
