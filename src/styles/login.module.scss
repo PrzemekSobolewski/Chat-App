@@ -46,20 +46,26 @@
             cursor: pointer;
             background-color: #008060;
         }
-        > h5 a {
-            text-decoration: none;
-            font-size: 1.2em;
-            color: #1affc6;
-        }
-        > h5 a:hover {
-            color: #008060;
+        > h5 {
+            > a {
+                text-decoration: none;
+                font-size: 1.2em;
+                color: #1affc6;
+            }
+            > a:hover {
+                color: #008060;
+            }
         }
     }
     
     > h1 {
         > a {
         text-decoration: none;
-        color: white;
+        color: #1affc6;
         }
+        > a:hover {
+            color: #008060;
+        }
+        
     }
 }

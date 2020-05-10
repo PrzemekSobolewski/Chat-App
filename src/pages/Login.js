@@ -19,7 +19,7 @@ const LogIn = () => {
             <div className="loginContent">
                 <form className="loginForm" onSubmit={handleSubmit} >
                     <h1>
-                        Sign up to <Link to="/">ChatApp</Link>
+                        Login to <Link to="/">ChatApp</Link>
                     </h1>
                     <div>
                         <input className="loginEmail" placeholder='Email' name='email' type='email' onChange={handleChange} value={email}/>
@@ -31,7 +31,7 @@ const LogIn = () => {
                         <button type="submit">Sign up</button>
                     </div>
                     <div>
-                        <h5>Already have an account? <Link to="/login">Login</Link></h5>
+                        <h5>Do not have an account? <Link to="/signup">Sign up</Link></h5>
                     </div>
                 </form>
             </div>
