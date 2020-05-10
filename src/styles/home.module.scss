@@ -1,0 +1,38 @@
+.homePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.homeContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 35em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+}
+
+.homeOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin: 5em 0 2em 0;
+    > a {
+        background-color: #1affc6;
+        padding: 0.5em;
+        border-radius: 15px;
+        
+        font-size: 1em;
+        color: black;
+        text-decoration: none;
+        
+    }
+    > a:hover {
+        background-color: #008060;
+    }
+}

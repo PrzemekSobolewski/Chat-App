@@ -10,12 +10,13 @@ import Chat from './pages/Chat';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import { auth } from './services/firebase';
+import './styles/main.scss';
 
 const App = () => {
   const [authenticated, setAuthenticated] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  /*useEffect(() => {
     auth().onAuthStateChanged((user) => {
       if(user) {
         setAuthenticated(true);
@@ -25,7 +26,7 @@ const App = () => {
         setLoading(false);
       }
     }, auth())
-  });
+  });*/
 
   function PrivateRoute({ component: Component, authenticated, ...rest }) {
     return (
@@ -52,7 +53,7 @@ const App = () => {
   return (
     <>
       {
-        loading === talse ? <h2> Loading... </h2> :
+        loading === false ? <h2> Loading... </h2> :
         <Router>
           <Switch>
             <Route exact path="/" component={Home}></Route>

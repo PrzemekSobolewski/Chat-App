@@ -5,6 +5,15 @@ import {singup} from '../helpers/auth';
 const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const handleChange = async (e) => {
+
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    }
+    
     return(
         <div>
             <form onSubmit={handleSubmit}>

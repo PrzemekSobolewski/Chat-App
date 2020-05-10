@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'SourceCodePro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/SourceCodePro-Regular.ttf');
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'SourceCodePro', serif;
+    background-image: url('../assets/connection.png');
+}
+
+html {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+@import 'home.module';
+@import 'login.module';
