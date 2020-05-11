@@ -13,7 +13,7 @@ export function signInWithGoogle() {
     return auth().signInWithPopup(provider);
 }
 
-  export function signInWithGitHub() {
+export function signInWithGitHub() {
     const provider = new auth.GithubAuthProvider();
     return auth().signInWithPopup(provider);
 }
