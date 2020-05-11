@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     auth().onAuthStateChanged((user) => {
       if(user) {
-        setAuthenticated(true);
+        setAuthenticated(false);
         setLoading(false);
       } else { 
         setAuthenticated(false);

@@ -1,0 +1,107 @@
+.signupPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.signupContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 35em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+}
+
+.signupForm {
+    > h1 {
+        text-align: center;
+        > a {
+        text-decoration: none;
+        color: #1affc6;
+        }
+        > a:hover {
+            color: #008060;
+        }
+        
+    }
+
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        > input {
+            width: 20em;
+            font-size: 1em;
+            padding: 0.2em;
+            border: none;
+            margin-bottom: 1em;
+        }
+
+        > input:focus {
+            outline: none;
+        }
+        
+        > h5 {
+            > a {
+                text-decoration: none;
+                font-size: 1.2em;
+                color: #1affc6;
+            }
+            > a:hover {
+                color: #008060;
+            }
+        }
+    }
+
+    > p {
+        text-align: center;
+    }
+    
+    
+}
+
+.signupButtton {
+    background-color: #1affc6;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+.signupButtton:focus {
+    outline: none;
+}
+
+.signupButtton:hover {
+    cursor: pointer;
+    background-color: #008060;
+}
+
+.signupGoogleButton {
+    background-color: red;
+    margin-right: 1em;
+    color: white;
+}
+.signupGoogleButton:hover {
+    background-color: darkred;
+}
+
+.signupGithubButton {
+    background-color: white;
+    margin-left: 1em;
+    color: black;
+}
+
+.signupGithubButton:hover {
+    background-color: rgba(245, 245, 245, 0.74);
+}
+
+
+.outerSignupButtons {
+    width: 100%;
+}
