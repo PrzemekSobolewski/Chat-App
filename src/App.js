@@ -16,7 +16,7 @@ const App = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  /*useEffect(() => {
+  useEffect(() => {
     auth().onAuthStateChanged((user) => {
       if(user) {
         setAuthenticated(true);
@@ -25,8 +25,8 @@ const App = () => {
         setAuthenticated(false);
         setLoading(false);
       }
-    }, auth())
-  });*/
+    })
+  },[]);
 
   function PrivateRoute({ component: Component, authenticated, ...rest }) {
     return (
@@ -53,7 +53,7 @@ const App = () => {
   return (
     <>
       {
-        loading === false ? <h2> Loading... </h2> :
+        loading !== false ? <h2> Loading... </h2> :
         <Router>
           <Switch>
             <Route exact path="/" component={Home}></Route>

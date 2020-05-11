@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
-import {singin} from '../helpers/auth';
+import {signin} from '../helpers/auth';
 
 const LogIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
-    const handleChange = async (e) => {
-
-    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        try {
+            await signin(email, password) 
+        } catch (error) {
+            console.log(error);
+        }
     }
     
     return(
@@ -22,13 +23,13 @@ const LogIn = () => {
                         Login to <Link to="/">ChatApp</Link>
                     </h1>
                     <div>
-                        <input className="loginEmail" placeholder='Email' name='email' type='email' onChange={handleChange} value={email}/>
+                        <input className="loginEmail" placeholder='Email' name='email' type='email' onChange={e => setEmail(e.target.value)} value={email}/>
                     </div>
                     <div>
-                        <input className="LoginPassword" placeholder='Password' name='password' type='password' onChange={handleChange} value={password}/>
+                        <input className="LoginPassword" placeholder='Password' name='password' type='password' onChange={e => setPassword(e.target.value)} value={password}/>
                     </div>
                     <div>
-                        <button type="submit">Sign up</button>
+                        <button type="submit">Log in</button>
                     </div>
                     <div>
                         <h5>Do not have an account? <Link to="/signup">Sign up</Link></h5>
