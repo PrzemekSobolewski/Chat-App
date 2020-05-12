@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
-import {signin} from '../helpers/auth';
+import {signin, signInWithGoogle, signInWithGitHub} from '../helpers/auth';
 
 const LogIn = () => {
     const [email, setEmail] = useState('');
@@ -12,6 +12,22 @@ const LogIn = () => {
             await signin(email, password) 
         } catch (error) {
             console.log(error);
+        }
+    }
+
+    const googleSignIn = async () => {
+        try {
+            await signInWithGoogle();
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const githubSignIn = async () => {
+        try {
+            await signInWithGitHub();
+        } catch (error) {
+            console.log(error)
         }
     }
     
@@ -29,7 +45,12 @@ const LogIn = () => {
                         <input className="LoginPassword" placeholder='Password' name='password' type='password' onChange={e => setPassword(e.target.value)} value={password}/>
                     </div>
                     <div>
-                        <button type="submit">Log in</button>
+                        <button className={"loginButton"} type="submit">Log in</button>
+                    </div>
+                    <p> or </p>
+                    <div className={"outerLoginButtons"}>
+                        <button className={"loginGoogleButton loginButton"} onClick={googleSignIn}>Log in with Google</button>
+                        <button className={"loginGithubButton loginButton"} onClick={githubSignIn}>Log in with GitHub</button>
                     </div>
                     <div>
                         <h5>Do not have an account? <Link to="/signup">Sign up</Link></h5>

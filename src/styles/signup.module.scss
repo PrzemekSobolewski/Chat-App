@@ -63,7 +63,7 @@
     }
 }
 
-.signupButtton {
+.signupButton {
     background-color: #1affc6;
     border: none;
     border-radius: 10px;
@@ -71,11 +71,11 @@
     font-size: 1em;
 }
 
-.signupButtton:focus {
+.signupButton:focus {
     outline: none;
 }
 
-.signupButtton:hover {
+.signupButton:hover {
     cursor: pointer;
     background-color: #008060;
 }

@@ -45,15 +45,15 @@ const SignUp = () => {
                         <input placeholder='Password' name='password' onChange={e => setPassword(e.target.value)} value={password}/>
                     </div>
                     <div >
-                        <button className={"signupButtton"} type="submit">Sign up</button>  
+                        <button className={"signupButton"} type="submit">Sign up</button>  
                     </div>
                     <p> or </p>
                     <div className={"outerSignupButtons"}>
-                        <button className={"signupGoogleButton signupButtton"} onClick={googleSignIn}>Sign up with Google</button>
-                        <button className={"signupGithubButton signupButtton"} onClick={githubSignIn}>Sign up with GitHub</button>
+                        <button className={"signupGoogleButton signupButton"} onClick={googleSignIn}>Sign up with Google</button>
+                        <button className={"signupGithubButton signupButton"} onClick={githubSignIn}>Sign up with GitHub</button>
                     </div>
                     <div>
-                        <h5>Already have an account? <Link to="/login">Login</Link></h5>
+                        <h5>Already have an account? <Link to="/login">Log in</Link></h5>
                     </div>
                 </form>
             </div>

@@ -18,34 +18,33 @@
 }
 
 .loginForm {
+    > h1 {
+        text-align: center;
+        > a {
+        text-decoration: none;
+        color: #1affc6;
+        }
+        > a:hover {
+            color: #008060;
+        }
+        
+    }
+
     > div {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-bottom: 1em;
         > input {
             width: 20em;
             font-size: 1em;
             padding: 0.2em;
             border: none;
+            margin-bottom: 1em;
         }
         > input:focus {
             outline: none;
         }
-        > button {
-            background-color: #1affc6;
-            border: none;
-            border-radius: 10px;
-            padding: 0.5em;
-            font-size: 1em;
-        }
-        > button:focus {
-            outline: none;
-        }
-        > button:hover {
-            cursor: pointer;
-            background-color: #008060;
-        }
+        
         > h5 {
             > a {
                 text-decoration: none;
@@ -57,15 +56,48 @@
             }
         }
     }
-    
-    > h1 {
-        > a {
-        text-decoration: none;
-        color: #1affc6;
-        }
-        > a:hover {
-            color: #008060;
-        }
-        
+    > p {
+        text-align: center;
     }
+}
+
+.loginButton {
+    background-color: #1affc6;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+.loginButton:focus {
+    outline: none;
+}
+
+.loginButton:hover {
+    cursor: pointer;
+    background-color: #008060;
+}
+
+.loginGoogleButton {
+    background-color: red;
+    margin-right: 1em;
+    color: white;
+}
+
+.loginGoogleButton:hover {
+    background-color: darkred;
+}
+
+.loginGithubButton {
+    background-color: white;
+    margin-left: 1em;
+    color: black;
+}
+
+.loginGithubButton:hover {
+    background-color: rgba(245, 245, 245, 0.74);
+}
+
+.outerLoginButtons {
+    width: 100%;
 }
