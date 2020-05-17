@@ -10,18 +10,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 35em;
+    width: 32em;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
+    > h1 {
+        letter-spacing: 2px;
+    }
 }
 
 .homeOptions {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 70%;
-    margin: 5em 0 2em 0;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 4em 0 2em 0;
     > a {
         background-color: #1affc6;
         padding: 0.5em;

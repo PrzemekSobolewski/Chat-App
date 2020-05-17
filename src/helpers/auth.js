@@ -8,6 +8,10 @@ export function signin(email, password) {
     return auth().signInWithEmailAndPassword(email, password);
 }
 
+export function signOutUser() {
+    return auth().signOut();
+}
+
 export function signInWithGoogle() {
     const provider = new auth.GoogleAuthProvider();
     return auth().signInWithPopup(provider);
