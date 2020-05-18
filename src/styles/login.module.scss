@@ -1,11 +1,11 @@
-.loginPage {
+.login_page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.loginContent {
+.login_content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
     
 }
 
-.loginForm {
+.login_form {
     > h1 {
         text-align: center;
         > a {
@@ -61,7 +61,7 @@
     }
 }
 
-.loginButton {
+.login_button {
     background-color: #1affc6;
     border: none;
     border-radius: 10px;
@@ -69,35 +69,35 @@
     font-size: 1em;
 }
 
-.loginButton:focus {
+.login_button:focus {
     outline: none;
 }
 
-.loginButton:hover {
+.login_button:hover {
     cursor: pointer;
     background-color: #008060;
 }
 
-.loginGoogleButton {
+.login_google-button {
     background-color: red;
     margin-right: 1em;
     color: white;
 }
 
-.loginGoogleButton:hover {
+.login_google-button:hover {
     background-color: darkred;
 }
 
-.loginGithubButton {
+.login_github-button {
     background-color: white;
     margin-left: 1em;
     color: black;
 }
 
-.loginGithubButton:hover {
+.login_github-button:hover {
     background-color: rgba(245, 245, 245, 0.74);
 }
 
-.outerLoginButtons {
+.outer_login-buttons {
     width: 100%;
 }

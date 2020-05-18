@@ -1,11 +1,11 @@
-.signupPage {
+.signup_page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.signupContent {
+.signup_content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@
     border-radius: 15px;
 }
 
-.signupForm {
+.signup_form {
     > h1 {
         text-align: center;
         > a {
@@ -63,7 +63,7 @@
     }
 }
 
-.signupButton {
+.signup_button {
     background-color: #1affc6;
     border: none;
     border-radius: 10px;
@@ -71,35 +71,35 @@
     font-size: 1em;
 }
 
-.signupButton:focus {
+.signup_button:focus {
     outline: none;
 }
 
-.signupButton:hover {
+.signup_button:hover {
     cursor: pointer;
     background-color: #008060;
 }
 
-.signupGoogleButton {
+.signup_google-button {
     background-color: red;
     margin-right: 1em;
     color: white;
 }
 
-.signupGoogleButton:hover {
+.signup_google-button:hover {
     background-color: darkred;
 }
 
-.signupGithubButton {
+.signup_github-button {
     background-color: white;
     margin-left: 1em;
     color: black;
 }
 
-.signupGithubButton:hover {
+.signup_github-button:hover {
     background-color: rgba(245, 245, 245, 0.74);
 }
 
-.outerSignupButtons {
+.outer_gignup-buttons {
     width: 100%;
 }

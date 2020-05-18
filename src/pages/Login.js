@@ -32,25 +32,25 @@ const LogIn = () => {
     }
     
     return(
-        <div className="loginPage">
-            <div className="loginContent">
-                <form className="loginForm" onSubmit={handleSubmit} >
+        <div className="login_page">
+            <div className="login_content">
+                <form className="login_form" onSubmit={handleSubmit} >
                     <h1>
                         Login to <Link to="/">ChatApp</Link>
                     </h1>
                     <div>
-                        <input className="loginEmail" placeholder='Email' name='email' type='email' onChange={e => setEmail(e.target.value)} value={email}/>
+                        <input placeholder='Email' name='email' type='email' onChange={e => setEmail(e.target.value)} value={email}/>
                     </div>
                     <div>
-                        <input className="LoginPassword" placeholder='Password' name='password' type='password' onChange={e => setPassword(e.target.value)} value={password}/>
+                        <input placeholder='Password' name='password' type='password' onChange={e => setPassword(e.target.value)} value={password}/>
                     </div>
                     <div>
-                        <button className={"loginButton"} type="submit">Log in</button>
+                        <button className={"login_button"} type="submit">Log in</button>
                     </div>
                     <p> or </p>
-                    <div className={"outerLoginButtons"}>
-                        <button className={"loginGoogleButton loginButton"} onClick={googleSignIn}>Log in with Google</button>
-                        <button className={"loginGithubButton loginButton"} onClick={githubSignIn}>Log in with GitHub</button>
+                    <div className={"outer_login-buttons"}>
+                        <button className={"login_google-button login_button"} onClick={googleSignIn}>Log in with Google</button>
+                        <button className={"login_github-button login_button"} onClick={githubSignIn}>Log in with GitHub</button>
                     </div>
                     <div>
                         <h5>Do not have an account? <Link to="/signup">Sign up</Link></h5>

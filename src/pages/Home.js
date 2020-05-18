@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 
 const Home = () => {
     return(
-        <div className="homePage">
-            <div className="homeContent">
+        <div className="home_page">
+            <div className="home_content">
                 <h1>Hello in ChatApp</h1>
-                <div className="homeOptions">
+                <div className="home_options">
                     <Link to='/login'>I have an account</Link>
                     <Link to='/signup'>Create an account</Link>
                 </div>

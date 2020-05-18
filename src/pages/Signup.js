@@ -32,9 +32,9 @@ const SignUp = () => {
     }
 
     return(
-        <div className={"signupPage"}>
-            <div className={"signupContent"}>
-                <form className={"signupForm"} onSubmit={handleSubmit}>
+        <div className={"signup_page"}>
+            <div className={"signup_content"}>
+                <form className={"signup_form"} onSubmit={handleSubmit}>
                     <h1>
                         Sign up to <Link to="/">ChatApp</Link>
                     </h1>
@@ -45,12 +45,12 @@ const SignUp = () => {
                         <input placeholder='Password' name='password' onChange={e => setPassword(e.target.value)} value={password}/>
                     </div>
                     <div >
-                        <button className={"signupButton"} type="submit">Sign up</button>  
+                        <button className={"signup_button"} type="submit">Sign up</button>  
                     </div>
                     <p> or </p>
-                    <div className={"outerSignupButtons"}>
-                        <button className={"signupGoogleButton signupButton"} onClick={googleSignIn}>Sign up with Google</button>
-                        <button className={"signupGithubButton signupButton"} onClick={githubSignIn}>Sign up with GitHub</button>
+                    <div className={"outer_signup-buttons"}>
+                        <button className={"signup_google-button signup_button"} onClick={googleSignIn}>Sign up with Google</button>
+                        <button className={"signup_github-button signup_button"} onClick={githubSignIn}>Sign up with GitHub</button>
                     </div>
                     <div>
                         <h5>Already have an account? <Link to="/login">Log in</Link></h5>

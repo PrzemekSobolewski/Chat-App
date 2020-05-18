@@ -3,6 +3,7 @@ import {auth, db} from '../services/firebase';
 import {signOutUser} from '../helpers/auth'
 const Chat = () => {
     const [user, setUser] = useState(auth().currentUser);
+    const [friend, setFirend] = useState('friendId')
     const [chats, setChats] = useState([]);
     const [content, setContent] = useState('');
     const [readError, setReadError] = useState(null);
@@ -33,7 +34,8 @@ const Chat = () => {
             await db.ref("chats").push({
                 content: content,
                 timestamp: Date.now(),
-                uid: user.uid
+                uid: user.uid,
+                friend: 'friendId' 
             });
             setContent('');
         }catch (error) {
@@ -42,7 +44,7 @@ const Chat = () => {
     }
 
     const userSignOut = async() => {
-        try{
+        try {
             await signOutUser();
         }catch (error) {
             console.log(error.message);
@@ -50,19 +52,33 @@ const Chat = () => {
     }
 
     return (
-        <div>
-            <div className="chats">
-                {chats.map(chat => {
-                return <p key={chat.timestamp}>{chat.content}</p>
-                })}
+        <div className="chat_page">
+            <div className="chat_user-actions">
+
             </div>
-            <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} value={content}/>
-                <button type="submit">Send</button>
-            </form>
-            <div>
-                Login in as: <strong>{user.email}</strong>
-                <button onClick={userSignOut}>Sign out</button>
+            <div className="chat_content">
+                <div className="chat_container">
+                    {chats.map(chat => {
+                        if(chat.uid === user.uid){ // todo
+                            return <p key={chat.timestamp}>{chat.content}</p>
+                        } else if (readError) {
+                            return <p>failed to load messages</p>;
+                        } else {
+                            return null
+                        }
+                    })}
+                </div>
+                <form onSubmit={handleSubmit}>
+                    <input onChange={handleChange} value={content}/>
+                    <button type="submit">Send</button>
+                </form>
+                <div>
+                    Login in as: <strong>{user.email}</strong>
+                    <button onClick={userSignOut}>Sign out</button>
+                </div>
+            </div>
+            <div className="chat_user-friends">
+
             </div>
         </div>
     )
