@@ -53,32 +53,40 @@ const Chat = () => {
 
     return (
         <div className="chat_page">
-            <div className="chat_user-actions">
-
-            </div>
-            <div className="chat_content">
-                <div className="chat_container">
-                    {chats.map(chat => {
-                        if(chat.uid === user.uid){ // todo
-                            return <p key={chat.timestamp}>{chat.content}</p>
-                        } else if (readError) {
-                            return <p>failed to load messages</p>;
-                        } else {
-                            return null
-                        }
-                    })}
+            <div className="chat_page-content">
+                <div className="chat_user-actions">
+                    <div className="chat_user-options">
+                        <p>Add friends</p>
+                        <p>Settings</p>
+                        <p>My account</p>
+                    </div>
+                    <div className="chat_user-friends">
+                        <header>Friends</header>
+                        <p>first friend</p>
+                        <p>second friend</p>
+                    </div>
                 </div>
-                <form onSubmit={handleSubmit}>
-                    <input onChange={handleChange} value={content}/>
-                    <button type="submit">Send</button>
-                </form>
-                <div>
-                    Login in as: <strong>{user.email}</strong>
-                    <button onClick={userSignOut}>Sign out</button>
+                <div className="chat_chat-content">
+                    <div className="chat_chat-container">
+                        {chats.map(chat => {
+                            if(chat.uid === user.uid){ // todo
+                                return <p key={chat.timestamp}>{chat.content}</p>
+                            } else if (readError) {
+                                return <p>failed to load messages</p>;
+                            } else {
+                                return null
+                            }
+                        })}
+                    </div>
+                    <form onSubmit={handleSubmit}>
+                        <input onChange={handleChange} value={content}/>
+                        <button type="submit">Send</button>
+                    </form>
+                    <div>
+                        Login in as: <strong>{user.email}</strong>
+                        <button onClick={userSignOut}>Sign out</button>
+                    </div>
                 </div>
-            </div>
-            <div className="chat_user-friends">
-
             </div>
         </div>
     )
