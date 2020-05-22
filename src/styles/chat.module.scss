@@ -13,6 +13,30 @@
     height: 80%;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 30px;
+    >.chat_chat-sign-out {
+        height: 100%;
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        >button {
+            text-align: center;
+            margin: 1em 1em 0em 0em;
+            border-radius: 15px;
+            border: none;
+            background-color: whitesmoke;
+            padding: 0.5em 1em;
+            font-size: 0.9em;
+        }
+        >button:focus {
+            outline: none;
+        }
+        >button:hover {
+            cursor: pointer;
+            background-color: #cc2900;
+            color: white;
+        }
+    }
 }
 
 .chat_user-actions {
@@ -20,22 +44,63 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    width: 30%;
-    margin: 1em 0em 1em 0em;
+    justify-content: space-evenly;
+    width: 25%;
     color: white;
+    >.chat_user-options {
+        padding-bottom: 10em;
+    }
+    
 }
 
 .chat_chat-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     height: 80%;
-    width: 70%;
-    margin-right: 7em;
+    width: 65%;
     background-color: whitesmoke;
-    > .chat_chat-container {
-        width: 80%;
+    border-radius: 20px;
+    >.chat_chat-container {
+        margin: 1em;
+        height: 65%;
+        overflow-y: auto;
     }
+    > form {
+        display: flex;
+        justify-content: center;
+        margin-left: 1em;
+        >input {
+            width: 80%;
+            border-radius: 15px;
+            border: 1px solid lightgrey;
+            padding: 0em 1em;
+            font-size: 1em;
+        }
+        >input:focus {
+            outline: none;
+            border-color: #008060;
+        }
+        >button {
+            margin: 0em 1em;
+            border-radius: 15px;
+            border: none;
+            background-color: #1affc6;
+            padding: 0.5em 1em;
+            font-size: 0.9em;
+        }
+        >button:focus {
+            outline: none;
+        }
+        >button:hover {
+            cursor: pointer;
+            background-color: #008060;
+            color: white;
+        }
+        
+    }
+    >.chat_chat-login-info {
+        margin: 2em 1em 1em 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    
 }
-

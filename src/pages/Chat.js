@@ -82,10 +82,12 @@ const Chat = () => {
                         <input onChange={handleChange} value={content}/>
                         <button type="submit">Send</button>
                     </form>
-                    <div>
-                        Login in as: <strong>{user.email}</strong>
-                        <button onClick={userSignOut}>Sign out</button>
+                    <div className="chat_chat-login-info">
+                        <span>Login in as: <strong>{user.email}</strong></span>
                     </div>
+                </div>
+                <div className="chat_chat-sign-out">
+                    <button onClick={userSignOut}>Sign out</button>
                 </div>
             </div>
         </div>
