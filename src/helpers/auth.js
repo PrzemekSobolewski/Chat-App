@@ -1,7 +1,7 @@
 import { auth } from "../services/firebase";
 
 export function signup(email, password) {
-    return auth().createUserWithEmailAndPassword(email, password);
+    return auth().createUserWithEmailAndPassword(email,password);
 }
 
 export function signin(email, password) {
@@ -14,6 +14,7 @@ export function signOutUser() {
 
 export function signInWithGoogle() {
     const provider = new auth.GoogleAuthProvider();
+    console.log(provider);
     return auth().signInWithPopup(provider);
 }
 

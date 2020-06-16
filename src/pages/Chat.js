@@ -8,8 +8,23 @@ const Chat = () => {
     const [content, setContent] = useState('');
     const [readError, setReadError] = useState(null);
     const [writeError, setWriteError] = useState(null);
+    const userRef = db.ref(`users`).child(auth().currentUser.uid);
 
     useEffect(() => {
+        userRef.on("value", snapshot => {
+            if(snapshot.exists()) {
+                console.log("user is already in database")
+            }else {
+                try { 
+                    userRef.set({
+                        uemail: auth().currentUser.email
+                    })
+                }catch(error) {
+                    console.log(error)
+                }
+            }
+        })
+        
         try {
             db.ref("chats").on("value", snapshot => {
                 let chats = [];
