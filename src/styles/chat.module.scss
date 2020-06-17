@@ -49,6 +49,10 @@
     color: white;
     >.chat_user-options {
         padding-bottom: 10em;
+        >p:hover {
+            cursor: pointer;
+            color: #1affc6;
+        }
     }
     
 }

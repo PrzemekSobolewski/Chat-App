@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import {auth, db} from '../services/firebase';
 import {signOutUser} from '../helpers/auth'
+import AddFriendModal from '../components/AddFriendModal';
+
 const Chat = () => {
     const [user, setUser] = useState(auth().currentUser);
     const [friend, setFirend] = useState('friendId')
@@ -9,7 +11,7 @@ const Chat = () => {
     const [readError, setReadError] = useState(null);
     const [writeError, setWriteError] = useState(null);
     const userRef = db.ref(`users`).child(auth().currentUser.uid);
-
+    const modalRef = useRef();
     useEffect(() => {
         userRef.on("value", snapshot => {
             if(snapshot.exists()) {
@@ -66,12 +68,16 @@ const Chat = () => {
         }
     }
 
+    const openAddFriendModal = () => {
+        modalRef.current.style.display = "block"; 
+    }
+
     return (
         <div className="chat_page">
             <div className="chat_page-content">
                 <div className="chat_user-actions">
                     <div className="chat_user-options">
-                        <p>Add friends</p>
+                        <p onClick={openAddFriendModal}>Add friends</p>
                         <p>Settings</p>
                         <p>My account</p>
                     </div>
@@ -98,13 +104,14 @@ const Chat = () => {
                         <button type="submit">Send</button>
                     </form>
                     <div className="chat_chat-login-info">
-                        <span>Login in as: <strong>{user.email}</strong></span>
+                        <span>Login as: <strong>{user.email}</strong></span>
                     </div>
                 </div>
                 <div className="chat_chat-sign-out">
                     <button onClick={userSignOut}>Sign out</button>
                 </div>
             </div>
+            <AddFriendModal modalRef={modalRef}/>
         </div>
     )
 } 
